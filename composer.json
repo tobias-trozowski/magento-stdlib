@@ -10,8 +10,7 @@
     "homepage": "https://github.com/tobias-trozowski/magento-stdlib",
     "license": "BSD-3-Clause",
     "require": {
-        "php" : ">=5.4.0",
-        "zendframework/zendframework": "~2.3"
+        "php" : ">=5.4.0"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "1.*",
