@@ -10,7 +10,7 @@ use Magento\Framework\Stdlib\StringUtils;
 /**
  * @coversDefaultClass \Magento\Framework\Stdlib\StringUtils
  */
-class StringTest extends \PHPUnit_Framework_TestCase
+class StringUtilsTest extends \PHPUnit_Framework_TestCase
 {
 
     public function splitDataProvider()
