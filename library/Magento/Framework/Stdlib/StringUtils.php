@@ -94,8 +94,7 @@ class StringUtils
             foreach ($split as $key => $part) {
                 if ($trim) {
                     // ignore spaces (even keys)
-                    $ign = $key % 2;
-                    if ($ign) {
+                    if ($key % 2) {
                         continue;
                     }
                     $space = ' ';
