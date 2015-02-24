@@ -16,7 +16,6 @@ class StringUtilsTest extends \PHPUnit_Framework_TestCase
     public function splitDataProvider()
     {
 
-        // @formatter:off
         return [
             'empty string'                      => ['',                        1, false,   false,  []],
             'no whitespaces'                    => ['1234',                    1, false,   false,  ['1','2','3','4']],
@@ -24,16 +23,13 @@ class StringUtilsTest extends \PHPUnit_Framework_TestCase
             'whitespace in the middle'          => ['12  34',                 1, false,   true,   ['1','2',' ','3','4']],
             'several whitespaces'               => ['12345  123    123456789', 5, true,    true,   ['12345','123','12345','6789']],
         ];
-        // @formatter:on
     }
 
     public function cleanDataProvider()
     {
-        // @formatter:off
         return [
             ['Iñtërnâtiônàlizætiøn', 'Iñtërnâtiônàlizætiøn'],
         ];
-        // @formatter:on
     }
 
     /**
@@ -104,13 +100,11 @@ class StringUtilsTest extends \PHPUnit_Framework_TestCase
     public function upperCaseWordsDataProvider()
     {
 
-        // @formatter:off
         return [
             ['test test2',                      '_',    '_',    'Test_Test2'],
             ['test_test2 test3',                '_',    '_',    'Test_Test2_Test3'],
             ['test test2_test3\test4|test5',    '|',    '\\',   'Test\Test2_test3\test4\Test5'],
         ];
-        // @formatter:on
     }
 
     /**
