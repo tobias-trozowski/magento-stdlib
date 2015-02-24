@@ -114,10 +114,12 @@ class StringUtils
                     $result[$index] .= $space . $part;
                 } elseif ($partLength <= $length) {
                     // add part to new element
+                    // @todo: check if "$index++;$result[$index]=$part;" is faster
                     $result[++$index] = $part;
                 } else {
                     // break too long part recursively
                     foreach (self::split($part, $length, false, $trim, $wordSeparatorRegex) as $subPart) {
+                        // @todo: check if "$index++;$result[$index]=$subPart;" is faster
                         $result[++$index] = $subPart;
                     }
                 }
