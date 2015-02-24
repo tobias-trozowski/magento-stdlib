@@ -15,7 +15,6 @@ class StringUtilsTest extends \PHPUnit_Framework_TestCase
 
     public function splitDataProvider()
     {
-
         return [
             'empty string'                      => ['',                        1, false,   false,  []],
             'no whitespaces'                    => ['1234',                    1, false,   false,  ['1','2','3','4']],
@@ -99,7 +98,6 @@ class StringUtilsTest extends \PHPUnit_Framework_TestCase
 
     public function upperCaseWordsDataProvider()
     {
-
         return [
             ['test test2',                      '_',    '_',    'Test_Test2'],
             ['test_test2 test3',                '_',    '_',    'Test_Test2_Test3'],
