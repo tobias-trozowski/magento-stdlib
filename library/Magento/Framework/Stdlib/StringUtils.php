@@ -6,9 +6,12 @@
 namespace Magento\Framework\Stdlib;
 
 /**
- * Magento methods to work with string
+ * Magento methods to work with string.
+ *
+ * Declared abstract, as we have no need for instantiation.
+ * @todo shall we use abstract classes or add private constructors to prevent instantiation?
  */
-class StringUtils
+abstract class StringUtils
 {
     /**
      * Default charset
