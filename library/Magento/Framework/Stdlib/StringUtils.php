@@ -211,7 +211,7 @@ class StringUtils
      * @param string $needle
      * @param int    $offset
      *
-     * @return int bool
+     * @return int|bool
      */
     public static function strpos($haystack, $needle, $offset = null)
     {
