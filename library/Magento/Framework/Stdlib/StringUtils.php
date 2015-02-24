@@ -26,7 +26,6 @@ class StringUtils
      */
     public static function upperCaseWords($str, $sourceSeparator = '_', $destinationSeparator = '_')
     {
-
         return str_replace(' ', $destinationSeparator, ucwords(str_replace($sourceSeparator, ' ', $str)));
     }
 
@@ -42,7 +41,6 @@ class StringUtils
      */
     public static function splitInjection($str, $length = 50, $needle = '-', $insert = ' ')
     {
-
         $str = self::split($str, $length);
         $newStr = '';
         foreach ($str as $part) {
@@ -74,7 +72,6 @@ class StringUtils
      */
     public static function split($value, $length = 1, $keepWords = false, $trim = false, $wordSeparatorRegex = '\s')
     {
-
         $result = [];
         if ($trim) {
             $value = trim(preg_replace('/\s{2,}/siu', ' ', $value));
@@ -150,7 +147,6 @@ class StringUtils
      */
     public static function strlen($string)
     {
-
         return iconv_strlen($string, self::ICONV_CHARSET);
     }
 
@@ -163,7 +159,6 @@ class StringUtils
      */
     public static function cleanString($string)
     {
-
         if ('"libiconv"' == ICONV_IMPL) {
             return iconv(self::ICONV_CHARSET, self::ICONV_CHARSET . '//IGNORE', $string);
         } else {
@@ -182,7 +177,6 @@ class StringUtils
      */
     public static function substr($string, $offset, $length = null)
     {
-
         $string = self::cleanString($string);
         if (is_null($length)) {
             $length = self::strlen($string) - $offset;
@@ -199,7 +193,6 @@ class StringUtils
      */
     public static function strrev($str)
     {
-
         $result = '';
         $strLen = self::strlen($str);
         if (!$strLen) {
@@ -222,7 +215,6 @@ class StringUtils
      */
     public static function strpos($haystack, $needle, $offset = null)
     {
-
         return iconv_strpos($haystack, $needle, $offset, self::ICONV_CHARSET);
     }
 }

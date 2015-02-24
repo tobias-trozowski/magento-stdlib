@@ -42,18 +42,15 @@ class ArrayUtils
      */
     public static function toArray($arg0)
     {
-        if (! is_object($arg0) && ! is_array($arg0) && ! $arg0 instanceof \Traversable)
-        {
+        if (! is_object($arg0) && ! is_array($arg0) && ! $arg0 instanceof \Traversable) {
             return $arg0;
         }
 
         $array = [];
-        foreach ($arg0 as $key => $v)
-        {
+        foreach ($arg0 as $key => $v) {
             $value = $v;
             $array[$key] = static::toArray($v);
         }
         return $array;
     }
-
 }

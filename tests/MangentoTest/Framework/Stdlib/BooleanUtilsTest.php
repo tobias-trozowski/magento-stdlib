@@ -73,7 +73,7 @@ class BooleanUtilsTest extends \PHPUnit_Framework_TestCase
             'boolean string "TRUE"'     => ['TRUE',     false, 'InvalidArgumentException', 'Boolean value is expected, supported values: '],
             'boolean string "FALSE"'    => ['FALSE',    false, 'InvalidArgumentException', 'Boolean value is expected, supported values: '],
             'empty string'              => ['',         false, 'InvalidArgumentException', 'Boolean value is expected, supported values: '],
-            'null'                      => [null,       false, 'InvalidArgumentException', 'Boolean value is expected, supported values: ']
+            'null'                      => [null,       false, 'InvalidArgumentException', 'Boolean value is expected, supported values: '],
         ];
         // @formatter:on
     }

@@ -1,8 +1,8 @@
 <?php
 namespace MagentoTest\Framework\Stdlib;
 
-use PHPUnit_Framework_TestCase;
 use Magento\Framework\Stdlib\ArrayUtils;
+use PHPUnit_Framework_TestCase;
 
 /**
  * @coversDefaultClass \Magento\Framework\Stdlib\ArrayUtils
@@ -18,7 +18,6 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-
         $this->arrayUtils = new ArrayUtils();
     }
 
@@ -32,7 +31,7 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
         // @formatter:off
         return [
             [['б' => 2,'в' => 3,'а' => 1],'ru_RU'],
-            [[],'ru_RU', false]
+            [[],'ru_RU', false],
         ];
         // @formatter:on
     }
@@ -43,15 +42,12 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
      */
     public function testKsortMultibyte($input, $locale, $expectedResult = null)
     {
-
         $result = $this->arrayUtils->ksortMultibyte($input, $locale);
-        if ($expectedResult !== null)
-        {
+        if ($expectedResult !== null) {
             $this->assertSame($expectedResult, $result);
         }
         $iterator = 0;
-        foreach ($input as $value)
-        {
+        foreach ($input as $value) {
             $iterator ++;
             $this->assertEquals($iterator, $value);
         }
@@ -59,14 +55,13 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
 
     public function toArrayDataProvider()
     {
-
         $expected = [
             'foo' => 'bar',
             'baz' => 'foo',
             'subfoo' => [
                 'foo' => 'baz',
-                'bar' => 'foo'
-            ]
+                'bar' => 'foo',
+            ],
         ];
         $stdClass = new \stdClass();
         $stdClass->foo = 'bar';
@@ -79,7 +74,7 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
         $stdClass->subfoo = $stdClass2;
         // @formatter:off
         return [
-            [$stdClass, $expected]
+            [$stdClass, $expected],
         ];
         // @formatter:on
     }
@@ -90,7 +85,6 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
      */
     public function testToArray($data, $expected)
     {
-
         $this->assertSame($expected, ArrayUtils::toArray($data));
     }
 }

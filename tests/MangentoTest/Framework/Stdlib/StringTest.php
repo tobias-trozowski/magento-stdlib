@@ -18,7 +18,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
             'no whitespaces'                    => ['1234',                    1, false,   false,  ['1','2','3','4']],
             'whitespace at beginning and end'   => [' 1234 ',                  1, false,   false,  [' ','1','2','3','4',' ']],
             'whitespace in the middle'          => ['12  34',                 1, false,   true,   ['1','2',' ','3','4']],
-            'several whitespaces'               => ['12345  123    123456789', 5, true,    true,   ['12345','123','12345','6789']]
+            'several whitespaces'               => ['12345  123    123456789', 5, true,    true,   ['12345','123','12345','6789']],
         ];
         // @formatter:on
     }
@@ -38,7 +38,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testSplit($value, $length, $keepWords, $trim, $expected)
     {
-
         $actual = StringUtils::split($value, $length, $keepWords, $trim);
         $this->assertSame($expected, $actual);
     }
@@ -48,7 +47,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testSplitInjection()
     {
-
         $string = '123456789';
         $this->assertEquals('1234 5678 9', StringUtils::splitInjection($string, 4));
         $this->assertEquals('123 456 789', StringUtils::splitInjection($string, 3));
@@ -61,7 +59,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testCleanString($string, $expected)
     {
-
         $actual = StringUtils::cleanString($string);
         $this->assertSame($expected, $actual);
     }
@@ -71,7 +68,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStrlen()
     {
-
         $this->assertSame(iconv_strlen('teststring', 'UTF-8'), StringUtils::strlen('teststring'));
     }
 
@@ -80,7 +76,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStrrev()
     {
-
         $this->assertSame('', StringUtils::strrev(''));
         $this->assertSame('654321', StringUtils::strrev('123456'));
     }
@@ -90,7 +85,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testStrpos()
     {
-
         $this->assertEquals(1, StringUtils::strpos('123', 2));
     }
 
@@ -99,7 +93,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubstr()
     {
-
         $this->assertSame('456', StringUtils::substr('123 456', 4));
         $this->assertSame('4', StringUtils::substr('123 456', 4, 1));
     }
@@ -122,7 +115,6 @@ class StringTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpperCaseWords($testString, $sourceSeparator, $destinationSeparator, $expected)
     {
-
         $actual = StringUtils::upperCaseWords($testString, $sourceSeparator, $destinationSeparator);
         $this->assertSame($expected, $actual);
     }
