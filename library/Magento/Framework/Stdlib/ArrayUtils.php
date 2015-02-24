@@ -8,8 +8,10 @@ namespace Magento\Framework\Stdlib;
 /**
  * Class ArrayUtils
  *
+ * Declared abstract, as we have no need for instantiation.
+ * @todo shall we use abstract classes or add private constructors to prevent instantiation?
  */
-class ArrayUtils
+abstract class ArrayUtils
 {
     /**
      * Sorts array with multibyte string keys
@@ -38,11 +40,12 @@ class ArrayUtils
     /**
      *
      * @param object|array|\Traversable $arg0
+     *
      * @return object|array|\Traversable
      */
     public static function toArray($arg0)
     {
-        if (! is_object($arg0) && ! is_array($arg0) && ! $arg0 instanceof \Traversable) {
+        if (!is_object($arg0) && !is_array($arg0) && !$arg0 instanceof \Traversable) {
             return $arg0;
         }
 

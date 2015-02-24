@@ -15,17 +15,6 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     *
-     * @var \Magento\Framework\Stdlib\ArrayUtils
-     */
-    protected $arrayUtils;
-
-    protected function setUp()
-    {
-        $this->arrayUtils = new ArrayUtils();
-    }
-
-    /**
      * Data provider for ksortMultibyteDataProvider
      *
      * @todo implement provider with values which different depends on locale
@@ -46,7 +35,7 @@ class ArrayUtilsTest extends PHPUnit_Framework_TestCase
      */
     public function testKsortMultibyte($input, $locale, $expectedResult = null)
     {
-        $result = $this->arrayUtils->ksortMultibyte($input, $locale);
+        $result = ArrayUtils::ksortMultibyte($input, $locale);
         if ($expectedResult !== null) {
             $this->assertSame($expectedResult, $result);
         }
