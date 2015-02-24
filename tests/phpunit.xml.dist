@@ -1,0 +1,40 @@
+<phpunit bootstrap="../vendor/autoload.php"
+         backupGlobals="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         checkForUnintentionallyCoveredCode="false"
+         beStrictAboutOutputDuringTests="true"
+         forceCoversAnnotation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         verbose="true"
+         colors="false">
+    <testsuites>
+        <testsuite name="Magento Stdlib Test Suite">
+            <directory>./MagentoTest</directory>
+            <exclude>./MagentoTest/_files/</exclude>
+            <exclude>./MagentoTest/AllTests/</exclude>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhiteList="true">
+            <directory suffix=".php">../library</directory>
+        </whitelist>
+    </filter>
+    <groups>
+        <exclude>
+            <group>disable</group>
+            <group>integration</group>
+        </exclude>
+    </groups>
+
+    <php>
+        <ini name="date.timezone" value="UTC"/>
+    </php>
+
+
+
+</phpunit>

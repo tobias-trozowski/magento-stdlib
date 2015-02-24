@@ -1,0 +1,45 @@
+{
+    "name": "magento/stdlib",
+    "description": "Stdlib component from Magento2",
+    "type": "library",
+    "minimum-stability": "dev",
+    "keywords": [
+        "magento",
+        "stdlib",
+        "utils"
+    ],
+    "homepage": "https://github.com/tobias-trozowski/magento-stdlib",
+    "license": "BSD-3-Clause",
+    "require": {
+        "php" : ">=5.4.0",
+        "zendframework/zendframework": "~2.3"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "1.*",
+        "phpunit/PHPUnit": "~4.5"
+    },
+    "autoload": {
+        "psr-0": {
+            "Magento\\Framework\\Stdlib\\": "library/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "MagentoTest\\Framework\\Stdlib\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs": [
+            "php-cs-fixer fix --config-file=./.php_cs --dry-run -v"
+        ],
+        "cs-fix": [
+            "php-cs-fixer fix --config-file=./.php_cs -v"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev",
+            "dev-develop": "0.1.x-dev"
+        }
+    }
+}
